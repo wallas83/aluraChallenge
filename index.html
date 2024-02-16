@@ -14,7 +14,7 @@
         <div class="text-encriptador">
             <textarea id="textarea" placeholder="Ingrese su texto aqui..." name="mensaje"></textarea>
             <hr>
-            <span>No ingrese mayusculas ni acentos </span>
+            <span id="alerta">No ingrese mayúsculas ni acentos </span>
 
             <div class="botones">
                 <button id="encriptar" class="btn encriptar">Encriptar</button>
@@ -22,19 +22,23 @@
                 <button id="desencriptar" class="btn desencriptar">Desencriptar</button>
             </div>
         </div>
-
+    
+        <section class="sectionSalida">
+            <h2>Respuesta</h2>
             <div class="mostrar">
-                <label id="salida" >
-                    caja, aca va el texto
+                <label id="salida">
+                    No se observa ningún dato todavia...!
                 </label>
-                <button id="copiar" class="btna copiar">Copiar texto</button>
-        
+
+                <div id="toast-container"></div>
 
             </div>
-     
-
+            <button id="copiar" class="btna copiar">Copiar texto</button>
+        </section>
 
     </section>
+
+    
     <script src="./src/encriptador.js"></script>
 </body>
 
