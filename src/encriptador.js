@@ -16,11 +16,13 @@ textArea.addEventListener('input', function () {
     verificaBotones();
     spnText.innerText = 'No ingrese mayúsculas ni acentos';
     spnText.classList.remove('peligro');
-    valorTextarea = textArea.value
-    const tieneMayusculaOAccentuada = /[A-Z\u00C0-\u00FF]/.test(valorTextarea);
+    valorTextarea = textArea.value;
+    // console.log(valorTextarea);
+    const tieneMayusculaOAccentuada = /(?![ñ])[A-Z\u00C0-\u00FF]/.test(valorTextarea);
 
 
     if (tieneMayusculaOAccentuada) {
+        // console.log(tieneMayusculaOAccentuada);
         // alert('tiene mayusculas o acentos');
         spnText.innerText = 'Escribiste mayúsculas o acentos';
         spnText.classList.add('peligro')
@@ -54,10 +56,11 @@ btnDesencriptar.addEventListener('click', function () {
     textArea.value = "";
 
 });
+
 btnCopiar.addEventListener('click', function () {
-    console.log(`dentro de copiar ${lbSalida.innerText}`);
-    navigator.clipboard.writeText(lbSalida.innerText).then(() => {
-        console.log('Content copied to clipboard');
+    // console.log(`dentro de copiar ${lbSalida.value}`);
+    navigator.clipboard.writeText(lbSalida.value).then(() => {
+        // console.log('Content copied to clipboard');
         // alert(`Contenido copiado: ${lbSalida.innerText}`);
         showToast(`Texto Copiado !`, 1800);
         lbSalida.innerText = "";
@@ -88,7 +91,7 @@ const verificaBotones = () => {
 }
 
 const encriptar = (string) => {
-    console.log(`dentro de encriptar ${string}`);
+    // console.log(`dentro de encriptar ${string}`);
     const encriptar = {
         a: 'ai',
         e: 'enter',
