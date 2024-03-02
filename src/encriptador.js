@@ -14,11 +14,13 @@ btnCopiar.disabled = true;
 textArea.addEventListener('input', function () {
 
     verificaBotones();
-    spnText.innerText = 'No ingrese mayúsculas ni acentos';
+     spnText.innerText = 'No ingrese mayúsculas ni acentos';
     spnText.classList.remove('peligro');
     valorTextarea = textArea.value;
     // console.log(valorTextarea);
-    const tieneMayusculaOAccentuada = /(?![ñ])[A-Z\u00C0-\u00FF]/.test(valorTextarea);
+    // const tieneMayusculaOAccentuada = /(?![ñ])[A-Z\u00C0-\u00FF]/.test(valorTextarea);
+
+    const tieneMayusculaOAccentuada = /(?![ñ])[A-Z!"#$%&'()*+,\-.\/:;<=>?@[\\\]^_`{|}~\u00C0-\u00FF]/.test(valorTextarea);
 
 
     if (tieneMayusculaOAccentuada) {
