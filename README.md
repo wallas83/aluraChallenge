@@ -21,8 +21,9 @@ Este es un sencillo encriptador de mensajes que te permite cifrar y descifrar me
 ## Contribuir
 
 ¡Siéntete libre de contribuir al desarrollo de este proyecto! Puedes abrir un problema para informar de errores o sugerir nuevas características. También puedes enviar una solicitud de extracción con tus mejoras.
-
-## Autor
+## Link de la página 
+[encriptador](https://wallas83.github.io/aluraChallenge)
+## Auto
 
 Este encriptador fue creado por [wilson huanca Callisaya](https://github.com/wallas83).
 
