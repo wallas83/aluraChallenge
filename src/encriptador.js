@@ -5,6 +5,9 @@ const btnDesencriptar = document.getElementById('desencriptar')
 const btnCopiar = document.getElementById('copiar');
 const spnText = document.getElementById('alerta');
 const lbSalida = document.getElementById('salida');
+const sectionSalida = document.getElementsByClassName('sectionSalida');
+console.log(`la seccion salida${sectionSalida.length > 0}`)
+// flip-diagonal-1-tr
 let valorTextarea = textArea.value;
 
 btnEncriptar.disabled = true;
@@ -16,6 +19,7 @@ textArea.addEventListener('input', function () {
     verificaBotones();
      spnText.innerText = 'No ingrese mayúsculas ni acentos';
     spnText.classList.remove('peligro');
+    sectionSalida[0].classList.remove('flip-diagonal-1-tr');
     valorTextarea = textArea.value;
     // console.log(valorTextarea);
     // const tieneMayusculaOAccentuada = /(?![ñ])[A-Z\u00C0-\u00FF]/.test(valorTextarea);
@@ -104,6 +108,7 @@ const encriptar = (string) => {
     }
     let encriptado =  parse(string, encriptar);
     lbSalida.innerText = encriptado;
+    sectionSalida[0].classList.add('flip-diagonal-1-tr');
 
 }
 const desencriptar = (cadena) => {
